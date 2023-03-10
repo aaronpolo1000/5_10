@@ -1,0 +1,8 @@
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\bin\Debug\Ej03.exe.config
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\bin\Debug\Ej03.exe
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\bin\Debug\Ej03.pdb
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\obj\Debug\Ej03.csproj.AssemblyReference.cache
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\obj\Debug\Ej03.csproj.SuggestedBindingRedirects.cache
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\obj\Debug\Ej03.csproj.CoreCompileInputs.cache
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\obj\Debug\Ej03.exe
+C:\Users\Pablo Fiscella\source\repos\Fiscella\Ej03\obj\Debug\Ej03.pdb
