@@ -1,0 +1,8 @@
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\bin\Debug\ej02.exe.config
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\bin\Debug\ej02.exe
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\bin\Debug\ej02.pdb
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\obj\Debug\ej02.csproj.AssemblyReference.cache
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\obj\Debug\ej02.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\obj\Debug\ej02.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\obj\Debug\ej02.exe
+C:\Users\Alumno\Downloads\aaron\5_10\polo\ej02\obj\Debug\ej02.pdb
