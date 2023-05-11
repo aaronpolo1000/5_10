@@ -27,8 +27,8 @@ namespace tp03
 
         {
 
-            if (cant<=0) {
-                return  0;
+            if (cant<0) {
+                return  this.cantidad;
             }
             return this.cantidad = cant + cantidad;
         }

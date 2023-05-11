@@ -222,6 +222,7 @@ namespace ej2
                 {
                     clases.Add(e.GetType());
                 }
+             
                 //if (e is Television)
                 //{
 
