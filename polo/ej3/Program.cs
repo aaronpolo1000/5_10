@@ -37,8 +37,8 @@ namespace ej3
         string sexo = "H";
         double peso = 0;
         double altura = 0;
-       
-    public Persona() { }
+        
+    public Persona() { this.DNI = GenerarDni(); }
         public Persona(string nombre, int edad  , string sexo,double peso,double altura) {
 
             this.nombre=nombre;
@@ -49,16 +49,21 @@ namespace ej3
             this.peso = peso;
             this.altura = altura;
         }
-        public Persona(string nombre,int edad,char sexo)
+        public Persona(string nombre,int edad,string sexo)
         {
-            
+            this.nombre = nombre;
+
+            this.edad = edad;
+            this.DNI = GenerarDni();
+            ComprobarSexo(sexo);
         }
 
 
 
-        private void ComprobarSexo(string c)
+        public void ComprobarSexo(string c)
         {
-            const string sexos = "HM";
+            const string sexos = "HMhm";
+      
             if (sexos.Contains(c))
             {
                 this.sexo = c;
@@ -67,9 +72,10 @@ namespace ej3
             {
                 this.sexo = "H";
             }
+      
             
         }
-        private int CalcularImc()
+        public int CalcularImc(double peso)
         {
             int imc=0;
             peso = this.peso / (this.altura * this.altura);
@@ -90,15 +96,16 @@ namespace ej3
             return imc;
      
         }
-        private bool EdadMayor(int edad)
+        public bool EdadMayor(int edad)
         {
             if (this.edad>18)
             {
                 return true;
             }
             return false;
+            
         }
-        private int GenerarDni()
+        public int GenerarDni()
         {
             int rnd = new Random().Next(10000000, 99999999);
             return rnd;
@@ -146,11 +153,13 @@ namespace ej3
         {
             List<Persona> personas = new List<Persona>();
             string name;
-            Int16 edad=0;
+            Int16 edad = 0;
             string sex;
             double heavy = 0;
             double altura = 0;
             string a;
+            string b;
+            string c;
             Console.WriteLine("Ingrese nombre: ");
             name = Console.ReadLine();
 
@@ -165,19 +174,72 @@ namespace ej3
             {
                 edad = Convert.ToInt16(a);
             }
-         
+
+
+            Console.WriteLine("Ingrese sexo: H/M ");
+            sex = Console.ReadLine();
+            if (sex == "")
+            {
+                sex = "H";
+            }
+            Console.WriteLine("Ingrese su peso en kg: ");
+           b = Console.ReadLine();
+            if (b == "" || b == null)
+            {
+            }
+
+            else
+            {
+                heavy = Convert.ToDouble(b);
+            }
+
+            Console.WriteLine("Ingrese su altura en m: ");
+            c = Console.ReadLine();
+            if (c == "" || c == null)
+            {
+            }
+
+            else
+            {
+                altura = Convert.ToDouble(c);
+            }
            
-            Console.WriteLine("Ingrese sexo: ");
-             sex = Console.ReadLine();
-
-            Console.WriteLine("Ingrese su peso: ");
-             heavy = Console.Read();
-            Console.WriteLine("Ingrese su altura: ");
-             altura = Console.Read();
             personas.Add(new Persona(name, edad, sex, heavy, altura));
-            Console.WriteLine(personas[0].Nombre + ", " + personas[0].Edad + ", " + personas[0].Dni + ", " + personas[0].Sexo + ", " + personas[0].Peso + ", "  + personas[0].Altura);
-            Console.ReadKey();
+            personas.Add(new Persona(name, edad, sex));
+            personas.Add(new Persona());
 
+            Console.Clear();
+            for(int i = 0; i < personas.Count; i++) {
+                Console.SetCursorPosition(0, i*10);
+                Console.WriteLine(personas[i].Nombre );
+                Console.WriteLine(personas[i].Edad);
+                if (personas[i].EdadMayor(personas[i].Edad))
+                {
+                    Console.WriteLine("Es mayor de edad");
+                }
+                else
+                {
+                    Console.WriteLine("Es menor de edad");
+                }
+                Console.WriteLine(personas[i].Dni);
+                Console.WriteLine(personas[i].Sexo);
+                Console.WriteLine(personas[i].Peso);
+                if (personas[i].CalcularImc(personas[i].Peso)==-1)
+                {
+                    Console.WriteLine("Debajo del peso ideal");
+                }
+                if (personas[i].CalcularImc(personas[i].Peso) == 0)
+                {
+                    Console.WriteLine("Esta en su peso ideal");
+                }
+                if (personas[i].CalcularImc(personas[i].Peso) == 1)
+                {
+                    Console.WriteLine("Esta sobre su peso ideal");
+                }
+                Console.WriteLine(personas[i].Altura);
+
+            }
+            Console.ReadKey();
         }
     }
 }
