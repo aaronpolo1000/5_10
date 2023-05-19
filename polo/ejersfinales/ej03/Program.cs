@@ -38,13 +38,13 @@ namespace ej03
         }
         public Password() { this.password = Convert.ToString(GenerarPassword()); }
 
-        
+
         public string GenerarPassword() {
             Random r = new Random();
             List<char> list = new List<char>();
-            char[] caracteres = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'};
+            char[] caracteres = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
             string password = "";
-           
+
 
             for (int i = 0; i < this.longitud; i++)
             {
@@ -52,20 +52,20 @@ namespace ej03
                 list.Add(caracteres[rnd]);
 
 
-                if (i==this.longitud-1) {
-                    for (int j = 0; j < list.Count ; j++)
+                if (i == this.longitud - 1) {
+                    for (int j = 0; j < list.Count; j++)
                     {
-                      
-                            password += list[j].ToString();
-                        
-                     
-                        }
+
+                        password += list[j].ToString();
+
+
+                    }
                 }
-                 
+
 
             }
 
-            
+
 
 
             return password;
@@ -82,31 +82,37 @@ namespace ej03
         }
         public bool EsFuerte(string contra)
         {
+     
             char[] mayusculas = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
             char[] minusculas = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'ñ', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
             char[] numeros = { '1', '2', '3', '4', '5', '6', '7', '8', '9', '0' };
-            string[] contraseña = contra.Split();
+            char[] arr;
+            arr = contra.ToCharArray();
             int m = 0;
             int n = 0;
             int num = 0;
-            for (int i = 0; i < contraseña.Count(); i++)
+       
+
+
+            for (int i = 0; i < arr.Count(); i++)
             {
-                if (mayusculas.Contains(Convert.ToChar(contraseña[i])))
+                if (mayusculas.Contains(arr[i]))
                 {
-                    m++;
+                    m = m + 1;
                 }
-                if (minusculas.Contains(Convert.ToChar(contraseña[i])))
+                if (minusculas.Contains(arr[i]))
                 {
-                    n++;
+                    n = n + 1;
                 }
-                if (numeros.Contains(Convert.ToChar(contraseña[i])))
+                if (numeros.Contains(arr[i]))
                 {
-                    num++;
+                    num = num + 1;
                 }
-                if (m == 2 && n == 1 && num == 5)
-                {
-                    return true;
-                }
+            }
+
+            if (m >= 2 && n >= 1 && num >= 5)
+            {
+                return true;
             }
             return false;
         }
@@ -115,29 +121,37 @@ namespace ej03
     {
         static void Main(string[] args)
         {
+            int cant = 0;
+            int longitud = 0;
+
             List<Password> passwords = new List<Password>();
             Console.WriteLine("Cuantas contraseñas quiere crear");
-            int cant = Console.Read();
+            cant = Convert.ToInt16(Console.ReadLine());
+
             List<bool> trueofalse = new List<bool>();
 
-            int longitud = 0;
-            for(int i = 0;i < cant;i++) {
-                Console.WriteLine("De cuanta longitud debe ser la contraseña número: "+(i+1));
-                longitud=Console.Read();
+
+            for (int i = 0; i < cant; i++)
+            {
+                Console.WriteLine("De cuanta longitud debe ser la contraseña número: " + (i + 1));
+                longitud = Convert.ToInt16(Console.ReadLine());
                 passwords.Add(new Password(longitud));
-                if (passwords[i].EsFuerte(passwords[i].contraseña) ){
+                if (passwords[i].EsFuerte(passwords[i].contraseña))
+                {
                     trueofalse.Add(true);
+                    Console.WriteLine(1);
                 }
-                else {
-
-                trueofalse.Add(false);
+                else
+                {
+                    trueofalse.Add(false);
                 }
             }
 
-            for(int i = 0; i < cant;i++) {
-                Console.WriteLine(passwords[i].contraseña +",   "+ trueofalse[i]);
+            for (int i = 0; i < cant; i++)
+            {
+                Console.WriteLine(passwords[i].contraseña + ",   " + trueofalse[i]);
             }
-        
+
             Console.ReadKey();
         }
     }
