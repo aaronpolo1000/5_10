@@ -31,25 +31,26 @@ namespace ej3
 {
     class Persona
     {
-        string nombre="";
-        int edad =0;
+        string nombre = "";
+        int edad = 0;
         int DNI;
         string sexo = "H";
         double peso = 0;
         double altura = 0;
-        
-    public Persona() { this.DNI = GenerarDni(); }
-        public Persona(string nombre, int edad  , string sexo,double peso,double altura) {
 
-            this.nombre=nombre;
-            
+        public Persona() { this.DNI = GenerarDni(); }
+        public Persona(string nombre, int edad, string sexo, double peso, double altura)
+        {
+
+            this.nombre = nombre;
+
             this.edad = edad;
             this.DNI = GenerarDni();
             ComprobarSexo(sexo);
             this.peso = peso;
             this.altura = altura;
         }
-        public Persona(string nombre,int edad,string sexo)
+        public Persona(string nombre, int edad, string sexo)
         {
             this.nombre = nombre;
 
@@ -63,7 +64,7 @@ namespace ej3
         public void ComprobarSexo(string c)
         {
             const string sexos = "HMhm";
-      
+
             if (sexos.Contains(c))
             {
                 this.sexo = c;
@@ -72,15 +73,15 @@ namespace ej3
             {
                 this.sexo = "H";
             }
-      
-            
+
+
         }
         public int CalcularImc(double peso)
         {
-            int imc=0;
+            int imc = 0;
             peso = this.peso / (this.altura * this.altura);
 
-            if ( this.peso < 20)
+            if (this.peso < 20)
             {
                 imc = -1;
             }
@@ -90,27 +91,27 @@ namespace ej3
             }
             else if (this.peso > 25)
             {
-              imc=1;
+                imc = 1;
             }
 
             return imc;
-     
+
         }
         public bool EdadMayor(int edad)
         {
-            if (this.edad>18)
+            if (this.edad > 18)
             {
                 return true;
             }
             return false;
-            
+
         }
         public int GenerarDni()
         {
             int rnd = new Random().Next(10000000, 99999999);
             return rnd;
         }
-       
+
 
         public string Nombre
         {
@@ -140,7 +141,7 @@ namespace ej3
         public int Dni
         {
             get { return this.DNI; }
-           
+
         }
     }
 
@@ -183,7 +184,7 @@ namespace ej3
                 sex = "H";
             }
             Console.WriteLine("Ingrese su peso en kg: ");
-           b = Console.ReadLine();
+            b = Console.ReadLine();
             if (b == "" || b == null)
             {
             }
@@ -203,15 +204,16 @@ namespace ej3
             {
                 altura = Convert.ToDouble(c);
             }
-           
+
             personas.Add(new Persona(name, edad, sex, heavy, altura));
             personas.Add(new Persona(name, edad, sex));
             personas.Add(new Persona());
 
             Console.Clear();
-            for(int i = 0; i < personas.Count; i++) {
-                Console.SetCursorPosition(0, i*10);
-                Console.WriteLine(personas[i].Nombre );
+            for (int i = 0; i < personas.Count; i++)
+            {
+                Console.SetCursorPosition(0, i * 10);
+                Console.WriteLine(personas[i].Nombre);
                 Console.WriteLine(personas[i].Edad);
                 if (personas[i].EdadMayor(personas[i].Edad))
                 {
@@ -224,7 +226,7 @@ namespace ej3
                 Console.WriteLine(personas[i].Dni);
                 Console.WriteLine(personas[i].Sexo);
                 Console.WriteLine(personas[i].Peso);
-                if (personas[i].CalcularImc(personas[i].Peso)==-1)
+                if (personas[i].CalcularImc(personas[i].Peso) == -1)
                 {
                     Console.WriteLine("Debajo del peso ideal");
                 }
