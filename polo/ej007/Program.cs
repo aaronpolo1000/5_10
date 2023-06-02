@@ -63,20 +63,39 @@ namespace ej007
             if (discrimante == 0) { return true; }
             return false;
         }
-        public double ObtenerRaiz() {
+        public string ObtenerRaiz() {
 
             double cuadraticap;
             double cuadratican;
-            cuadraticap =((-1)*(b) + (Math.Sqrt(discriminante))) / (2 * a);
-            cuadratican = ((-1) * (b)- (Math.Sqrt(discriminante))) / (2 * a);
-            return cuadraticap;
+            cuadraticap =(((-1)*(b)) + (Math.Sqrt(discriminante))) / (2 * a);
+            cuadratican = (((-1) * (b))- (Math.Sqrt(discriminante))) / (2 * a);
+            if (cuadratican==cuadraticap)
+            {
+                return "la raiz es"+ cuadratican;
+            }
+            return "Las raices son "+cuadraticap + " y  "+ cuadratican;
+        }
+        public string Calcular()
+        {
+            if (TieneRaices(this.discriminante))
+            {
+                return ObtenerRaiz();
+            }
+            if (TieneRaiz(this.discriminante))
+            {
+                return ObtenerRaiz();
+            }
+            return "Tiene raices complejas";
         }
     }
     internal class Program
     {
         static void Main(string[] args)
         {
-
+            List<Raices> raices = new List<Raices>();
+            raices.Add(new Raices(1 , -5 , 1/6));
+            Console.WriteLine(raices[0].Calcular());
+            Console.ReadKey();
         }
     }
 }
