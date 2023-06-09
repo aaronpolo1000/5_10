@@ -93,7 +93,7 @@ namespace ej007
         static void Main(string[] args)
         {
             List<Raices> raices = new List<Raices>();
-            raices.Add(new Raices(-12.5, -35, -45));
+            raices.Add(new Raices(23,24,59));
             Console.WriteLine(raices[0].Calcular());
             Console.ReadKey();
         }

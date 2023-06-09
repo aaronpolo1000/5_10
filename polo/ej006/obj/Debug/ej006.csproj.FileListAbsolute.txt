@@ -1,0 +1,8 @@
+C:\Users\Alumno\source\repos\5_10\polo\ej006\bin\Debug\ej006.exe.config
+C:\Users\Alumno\source\repos\5_10\polo\ej006\bin\Debug\ej006.exe
+C:\Users\Alumno\source\repos\5_10\polo\ej006\bin\Debug\ej006.pdb
+C:\Users\Alumno\source\repos\5_10\polo\ej006\obj\Debug\ej006.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\5_10\polo\ej006\obj\Debug\ej006.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\5_10\polo\ej006\obj\Debug\ej006.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\5_10\polo\ej006\obj\Debug\ej006.exe
+C:\Users\Alumno\source\repos\5_10\polo\ej006\obj\Debug\ej006.pdb

@@ -84,6 +84,7 @@ namespace ej006
             {
                 Console.WriteLine("pinocho tiene mas paginas");
             }
+            Console.ReadKey();
         }
     }
 }
