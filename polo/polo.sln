@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ej007", "ej007\ej007.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ej008", "ej008\ej008.csproj", "{DA0442F2-7F07-422C-AF22-BDBF856D4615}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{7EF3C156-45CE-4F49-A5CD-C5D810F45C4C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{DA0442F2-7F07-422C-AF22-BDBF856D4615}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA0442F2-7F07-422C-AF22-BDBF856D4615}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA0442F2-7F07-422C-AF22-BDBF856D4615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EF3C156-45CE-4F49-A5CD-C5D810F45C4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF3C156-45CE-4F49-A5CD-C5D810F45C4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF3C156-45CE-4F49-A5CD-C5D810F45C4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF3C156-45CE-4F49-A5CD-C5D810F45C4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
