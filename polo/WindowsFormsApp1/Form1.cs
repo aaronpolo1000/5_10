@@ -30,11 +30,15 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Add(textBox1.Text);
+            textBox1.Text = "";
+            textBox1.Focus();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             listBox2.Items.Add(textBox2.Text);
+            textBox2.Text = "";
+            textBox2.Focus();
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
@@ -43,6 +47,8 @@ namespace WindowsFormsApp1
             if (e.KeyCode == Keys.Enter)
             {
                 listBox1.Items.Add(textBox1.Text);
+                textBox1.Text = "";
+                textBox1.Focus();
             }
         }
 
@@ -51,13 +57,55 @@ namespace WindowsFormsApp1
             if (e.KeyCode == Keys.Enter)
             {
                 listBox2.Items.Add(textBox2.Text);
+                textBox2.Text = "";
+                textBox2.Focus();
             }
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-           listBox2.Items.Add(listBox1.SelectedItem);
+            if (listBox1.SelectedItem != null)
+            {
+                listBox2.Items.Add(listBox1.SelectedItem);
+                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+            }
+            }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (listBox2.SelectedItem != null)
+            {
+                listBox1.Items.Add(listBox2.SelectedItem);
+                listBox2.Items.RemoveAt(listBox2.SelectedIndex);
+            }   
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listBox1.Items)
+            {
+                listBox2.Items.Add(item);
+            }
+            listBox1.Items.Clear();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listBox2.Items)
+            {
+                listBox1.Items.Add(item);
+            }
+            listBox2.Items.Clear();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
             listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            listBox2.Items.RemoveAt(listBox2.SelectedIndex);
         }
     }
 }
