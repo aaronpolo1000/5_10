@@ -30,12 +30,17 @@ public class Persona
         public Persona( string nombre,int edad,string sexo) {
         this.nombre = nombre;
         this.edad = edad;
-        this.sexo = sexo;}
+        this.sexo = sexo;
+        }
         public string Nombre {
            get { return nombre; } set {  nombre = value; }
         }
         public int Edad { get { return edad; } set { edad = value; } }
-        
+       virtual public int asistenciaa()
+        {
+            int rnd3 = rnd2.Next(0, 100);
+            return rnd3;
+        }
         public string sexoo()
         {
             string[] notas = { "H", "M" };
@@ -50,8 +55,11 @@ public class Persona
     {
      static Random rnd = new Random();
         int nota;
+        int asistencia;
+      
         public Estudiante(string nombre,int edad,string sexo):base(nombre,edad,sexo) {
             this.nota =notaa();
+            this.asistencia=asistenciaa();
         }
         public int notaa()
         {
@@ -73,9 +81,11 @@ public class Persona
     {
         static Random rnd = new Random();
         string materia;
+        int asistencia;
         public Profesor(string nombre, int edad, string sexo) : base(nombre, edad, sexo)
         {
-            this.materia = materiaa(); 
+            this.materia = materiaa();
+            this.asistencia = asistenciaa();
         }
         public int edaa()
         {
@@ -96,7 +106,8 @@ public class Persona
     {
         static void Main(string[] args)
         {
-      
+            List<asd> list= new
+
         }
     }
 }
