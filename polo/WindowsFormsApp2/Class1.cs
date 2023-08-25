@@ -85,7 +85,8 @@ StringBuilder lpszShortPath, int cchBuffer);
         {
             if (!File.Exists(fileName))return false;
             string nombreCorto = NombreCorto(fileName);
-            if (mciSendString("open" + nombreCorto + "type" + Tipo + "alias" + sAlias, null, 0, 0) == 0) return true; else return false;
+            if (mciSendString("open " + nombreCorto + " type " + Tipo +
+       " alias " + sAlias, null, 0, 0) == 0) return true; else return false;
         }
 
         public void Reproducir()
@@ -94,7 +95,7 @@ StringBuilder lpszShortPath, int cchBuffer);
             {
                 if (Abrir())
                 {
-                    int mciResul = mciSendString("play" + sAlias, null, 0, 0);
+                    int mciResul = mciSendString("play " + sAlias, null, 0, 0);
                     if (mciResul == 0) { ReproductorEstado("OK"); } else ReproductorEstado(MciMensajesDeError(mciResul));
                 }
                 else ReproductorEstado("No se a logrado abrir el archivo");
@@ -103,20 +104,29 @@ StringBuilder lpszShortPath, int cchBuffer);
         }
         public void ReproducirDesde(long Desde)
         {
-            int mciResul= mciSendString("play"+sAlias+"from"+ (Desde * 1000).ToString(), null, 0, 0);
+            int mciResul= mciSendString("play "+sAlias+" from "+ (Desde * 1000).ToString(), null, 0, 0);
             if (mciResul == 0)
                 ReproductorEstado("Nueva Posición: " + Desde.ToString());
             else
                 ReproductorEstado(MciMensajesDeError(mciResul));
         }
+        public void Reposicionar(int NuevaPosicion)
+        {
+            int mciResul = mciSendString("seek " + sAlias + " to " +
+            (NuevaPosicion * 1000).ToString(), null, 0, 0);
+            if (mciResul == 0)
+                ReproductorEstado("Nueva Posición: " + NuevaPosicion.ToString());
+            else
+                ReproductorEstado(MciMensajesDeError(mciResul));
+        }
         public void  Velocidad(int Tramas)
         {
-            int mciResul=mciSendString("set"+ sAlias+"tempo"+Tramas, null, 0, 0);
+            int mciResul=mciSendString("set "+ sAlias+" tempo "+Tramas, null, 0, 0);
             if (mciResul == 0) ReproductorEstado("Velocidad modificada"); else ReproductorEstado(MciMensajesDeError(mciResul));
         } 
         public void Principio()
         {
-            int mciResul = mciSendString("seek" + sAlias + " to start" , null, 0, 0);
+            int mciResul = mciSendString("seek " + sAlias + " to start" , null, 0, 0);
             if (mciResul == 0)
                 ReproductorEstado("Inicio de" + Path.GetFileNameWithoutExtension(fileName));
             else
@@ -124,7 +134,7 @@ StringBuilder lpszShortPath, int cchBuffer);
         }
         public void Final()
         {
-            int mciResul = mciSendString("seek " + sAlias + " to end", null, 0, 0);
+            int mciResul = mciSendString("seek " + sAlias + " to end ", null, 0, 0);
             if (mciResul == 0)
                 ReproductorEstado("Final de" + Path.GetFileNameWithoutExtension(fileName));
             else

@@ -251,7 +251,7 @@ System.ComponentModel.CancelEventArgs e)
         {
             trackBarClick = false;
             Sonido.Detener();
-            Sonido.Reposoa(trackBar1.Value);
+            Sonido.Reposicionar(trackBar1.Value);
             Sonido.ReproducirDesde(trackBar1.Value);
             timer1.Start();
         }
