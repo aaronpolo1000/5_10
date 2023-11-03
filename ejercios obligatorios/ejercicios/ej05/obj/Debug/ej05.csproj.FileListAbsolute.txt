@@ -1,0 +1,8 @@
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\bin\Debug\ej05.exe.config
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\bin\Debug\ej05.exe
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\bin\Debug\ej05.pdb
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\obj\Debug\ej05.csproj.AssemblyReference.cache
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\obj\Debug\ej05.csproj.SuggestedBindingRedirects.cache
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\obj\Debug\ej05.csproj.CoreCompileInputs.cache
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\obj\Debug\ej05.exe
+C:\Users\Alumno\source\repos\5_10\ejercios obligatorios\ejercicios\ej05\obj\Debug\ej05.pdb
