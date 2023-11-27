@@ -1,0 +1,8 @@
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\bin\Debug\ej15.exe.config
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\bin\Debug\ej15.exe
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\bin\Debug\ej15.pdb
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\obj\Debug\ej15.csproj.AssemblyReference.cache
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\obj\Debug\ej15.csproj.SuggestedBindingRedirects.cache
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\obj\Debug\ej15.csproj.CoreCompileInputs.cache
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\obj\Debug\ej15.exe
+C:\Users\aaron\source\repos\5_10\ejercios obligatorios\ejercicios\ej15\obj\Debug\ej15.pdb

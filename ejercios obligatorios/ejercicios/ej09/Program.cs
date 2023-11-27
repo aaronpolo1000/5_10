@@ -21,7 +21,7 @@ namespace ej09
         static void Main(string[] args)
         {
             string[] nombres = new string[] { "Aaron", "Pedro", "Luis", "Carlos", "Miguel", "Alejandro", "Jorge", "José", "Francisco", "Antonio", "María", "Ana", "Laura", "Carolina", "Sofía", "Isabella", "Valentina", "Gabriela", "Paola", "Fernanda" };
-            List<Pelicula> peliculas = new List<Pelicula>() { new Pelicula("Pokemon Mewtwo", 1.28, "Kunihiko Yuyama", 13), new Pelicula("Five Nights at Freddy's: la pelicula", 2.28, "Emma Tammi", 16), new Pelicula("300", 2.58, "Zack Snyder", 18) };
+            List<Pelicula> peliculas = new List<Pelicula>() { new Pelicula("Pokemon Mewtwo", 1.36, "Kunihiko Yuyama", 13), new Pelicula("Five Nights at Freddy's: la pelicula", 1.49, "Emma Tammi", 16), new Pelicula("300", 1.57, "Zack Snyder", 18) };
             Sala sala = new Sala(peliculas[rd.Next(0, peliculas.Count())], rd.Next(1000, 2400), 8, 8);
             List<Espectador> espectadores = new List<Espectador>();
             Console.CursorVisible = false;

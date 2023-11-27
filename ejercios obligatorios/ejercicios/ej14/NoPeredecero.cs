@@ -6,7 +6,18 @@ using System.Threading.Tasks;
 
 namespace ej14
 {
-    internal class NoPeredecero
+    internal class NoPerecedero : Producto
     {
+        private string tipo;
+
+        public NoPerecedero(string tipo, string nombre, int precio) : base(nombre, precio)
+        {
+            this.tipo = tipo;
+        }
+
+        public string Tipo
+        {
+            get { return tipo; }
+        }
     }
 }

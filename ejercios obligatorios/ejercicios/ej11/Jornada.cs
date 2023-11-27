@@ -8,5 +8,17 @@ namespace ej11
 {
     internal class Jornada
     {
+        private int pozo = 0;
+
+        public Jornada()
+        {
+
+        }
+
+        public int Pozo
+        {
+            get { return pozo; }
+            set { pozo = value; }
+        }
     }
 }

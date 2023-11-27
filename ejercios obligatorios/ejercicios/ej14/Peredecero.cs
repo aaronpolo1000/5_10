@@ -6,7 +6,24 @@ using System.Threading.Tasks;
 
 namespace ej14
 {
-    internal class Peredecero
+    internal class Perecedero : Producto
     {
+        private int dias;
+        public Perecedero(int dias, string nombre, int precio) : base(nombre, precio)
+        {
+            this.dias = dias;
+        }
+        public int Dias
+        {
+            get { return dias; }
+        }
+
+        public void calcular(int cantidad)
+        {
+            base.calcular(cantidad);
+            if (dias == 1) precio /= 4;
+            else if (dias == 2) precio /= 3;
+            else if (dias == 3) precio /= 2;
+        }
     }
 }

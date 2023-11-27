@@ -6,7 +6,27 @@ using System.Threading.Tasks;
 
 namespace ej14
 {
-    internal class Producto
+    abstract internal class Producto
     {
+        public string nombre;
+        public int precio;
+        public Producto(string nombre, int precio)
+        {
+            this.nombre = nombre;
+            this.precio = precio;
+        }
+        public string Nombre
+        {
+            get { return nombre; }
+        }
+        public int Precio
+        {
+            get { return precio; }
+        }
+
+        public void calcular(int cantidad)
+        {
+            precio *= cantidad;
+        }
     }
 }
